@@ -559,6 +559,13 @@ int mempacket_dup_last_packet(BIO *bio)
     return 1;
 }
 
+int mempacket_get_count(BIO *bio)
+{
+    MEMPACKET_TEST_CTX *ctx = BIO_get_data(bio);
+
+    return sk_MEMPACKET_num(ctx->pkts);
+}
+
 int mempacket_test_inject(BIO *bio, const char *in, int inl, int pktnum,
     int type)
 {
