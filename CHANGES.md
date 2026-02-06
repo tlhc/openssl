@@ -274,6 +274,11 @@ OpenSSL Releases
 
    *Bob Beck*
 
+ * Improved DTLS handshake robustness under UDP reordering by buffering and
+   replaying early ChangeCipherSpec (CCS) records at the expected state.
+
+   *Tong Li*
+
  * The script tool `c_rehash` was removed. Use `openssl rehash` instead.
 
    *Norbert Pocs*
